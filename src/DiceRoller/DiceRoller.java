@@ -7,14 +7,15 @@ public class DiceRoller {
     public static void main(String[] args) {
         int numDie;
         int numFaces;
-        int Total = 0;
+        int Total;
         int Output;
+        String Exit = "";
         Scanner DieType = new Scanner(System.in);
         System.out.println("Enter die in format '#d##'. Press enter to begin or"
             + " type 'stop' to end program.");
         
         while (true){
-            String Exit = DieType.nextLine();
+            Exit = DieType.nextLine();
             if (Exit.equalsIgnoreCase("stop")){
                 break;
             }
@@ -31,6 +32,11 @@ public class DiceRoller {
                     System.out.println(Output);
                 }
                 System.out.println("Total: " + Total);
+		System.out.println("Enter another die or type 'stop' to exit.");
+                Exit = DieType.nextLine();
+                if (Exit.equalsIgnoreCase("stop")){
+                    break;
+                }
             }
         }   
         
